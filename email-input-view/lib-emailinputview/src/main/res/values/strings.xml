@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">email-input-view</string>
     <string name="emailinputview_hint">Email</string>
+    <string name="emailinputview_invalid_error">Email not recognized</string>
 </resources>
