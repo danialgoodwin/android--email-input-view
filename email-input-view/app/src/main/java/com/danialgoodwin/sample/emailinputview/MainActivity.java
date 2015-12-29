@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.danialgoodwin.ui.emailinputview.EmailInputView;
+import com.danialgoodwin.ui.EmailInputView;
 
 public class MainActivity extends Activity {
 

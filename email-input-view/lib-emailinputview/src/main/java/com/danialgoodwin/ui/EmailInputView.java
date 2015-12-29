@@ -1,7 +1,7 @@
 /**
  * Created by Danial Goodwin on 2015-12-28.
  */
-package com.danialgoodwin.ui.emailinputview;
+package com.danialgoodwin.ui;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -13,8 +13,10 @@ import android.util.AttributeSet;
 import android.util.Patterns;
 import android.widget.EditText;
 
+import com.danialgoodwin.ui.emailinputview.R;
+
 /** An enhanced EditText with easy ability to get valid email from user. An error message will
- * appear for invalid errors. */
+ * appear for invalid emails. */
 public class EmailInputView extends EditText {
 
     public EmailInputView(Context context) {
