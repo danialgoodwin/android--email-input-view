@@ -11,6 +11,7 @@ An enhanced EditText with easy ability to get valid email from user. An error me
 - Convenience method `isValid()`. (Based on Android's `Patterns.EMAIL_ADDRESS`)
 - Ability to override `showErrorMessage()` to change behavior.
 - All other default `EditText` features, including standard Android UI.
+- Minimal size library.
 
 
 
