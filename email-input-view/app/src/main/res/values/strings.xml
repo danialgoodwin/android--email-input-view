@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">email-input-view</string>
+    <string name="app_name">EmailInputView</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 </resources>

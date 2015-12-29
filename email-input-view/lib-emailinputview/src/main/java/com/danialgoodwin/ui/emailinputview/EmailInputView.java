@@ -12,30 +12,30 @@ import android.text.TextUtils;
 import android.util.AttributeSet;
 import android.util.Patterns;
 import android.widget.EditText;
-import android.widget.TextView;
 
-/** An enhanced EditText with easy ability to get email from user. */
+/** An enhanced EditText with easy ability to get valid email from user. An error message will
+ * appear for invalid errors. */
 public class EmailInputView extends EditText {
 
     public EmailInputView(Context context) {
         super(context);
-        initialize(context);
+        initialize();
     }
 
     public EmailInputView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        initialize(context);
+        initialize();
     }
 
     public EmailInputView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        initialize(context);
+        initialize();
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public EmailInputView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        initialize(context);
+        initialize();
     }
 
     @Override
@@ -50,11 +50,15 @@ public class EmailInputView extends EditText {
         validateEmail();
     }
 
-    public static boolean isValidEmail(CharSequence email) {
+    public boolean isValid() {
+        return isValidEmail(getText());
+    }
+
+    public boolean isValidEmail(CharSequence email) {
         return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
     }
 
-    private void initialize(Context context) {
+    private void initialize() {
         setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
         setHint(R.string.emailinputview_hint);
     }
@@ -68,4 +72,5 @@ public class EmailInputView extends EditText {
             showErrorMessage();
         }
     }
+
 }
