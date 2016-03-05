@@ -75,11 +75,13 @@ public class EmailInputView extends EditText {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 SpannableStringBuilder stringBuilder = (SpannableStringBuilder) s;
+                int numberOfReplacedChars = 0;
                 for (int i = 0; i < count; i++) {
-                    int currentIndex = start + i;
+                    int currentIndex = start + i - numberOfReplacedChars;
                     if (Character.isWhitespace(stringBuilder.charAt(currentIndex))) {
                         // replacing space with empty string
                         stringBuilder.replace(currentIndex, currentIndex + 1, "");
+                        numberOfReplacedChars++;
                     }
                 }
             }
